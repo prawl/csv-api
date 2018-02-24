@@ -1,0 +1,32 @@
+# -*- coding: utf-8 -*-
+from __future__ import unicode_literals
+
+from django.db import models
+
+
+class ImportFile(models.Model):
+  filename = models.CharField(max_length=255)
+  upload = models.FileField(upload_to="uploads/")
+
+  def __str__(self):
+    return self.filename
+
+class ImportRow(models.Model):
+  # TODO: Fix file association
+  # file = models.ForeignKey(ImportFile, on_delete=models.CASCADE)
+  date = models.DateField('Date', null=True, blank=True)
+  retail_sales_volume = models.FloatField(default=0)
+  acv_dist = models.FloatField(default=0)
+  competition = models.FloatField(default=0)
+  edlp = models.FloatField(default=0)
+  trade_any_promo = models.FloatField(default=0)
+  tv = models.FloatField(default=0)
+  print_value = models.FloatField(default=0)
+  online_display = models.FloatField(default=0)
+  preroll_video = models.FloatField(default=0)
+  paid_search = models.FloatField(default=0)
+  public_relations = models.FloatField(default=0)
+  fsi = models.FloatField(default=0)
+  digital_coupon = models.FloatField(default=0)
+  shopper_marketing = models.FloatField(default=0)
+

@@ -1,14 +1,20 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from django.test import TestCase
 from .models import ImportFile, ImportRow
-from django.utils import timezone
+from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import SimpleUploadedFile
+from django.test import TestCase
+from django.utils import timezone
 
 class ImportRowModelTest(TestCase):
-  def test_row_creation(self):
+  def validation_row_creation_positive_float(self):
+    row = ImportRow(acv_dist=-1)
+    self.assertRaises(ValidationError, row.full_clean)
+
+  def row_creation(self):
     row = ImportRow.objects.create(
-      file = ImportFile.objects.create(),
+      # TODO: Add file attribute test
+      # file = ImportFile.objects.create(),
       date = timezone.now().date(),
       retail_sales_volume = 1.3,
       acv_dist = 1.3,
@@ -41,6 +47,6 @@ class ImportRowModelTest(TestCase):
     self.assertEqual(row.shopper_marketing, 1.3)
 
 # TODO: Write this unit test
-class ImportFileModelTest(TestCase):
-  def test_row_creation(self):
-    csv = SimpleUploadedFile("test.csv", )
+# class ImportFileModelTest(TestCase):
+#   def test_row_creation(self):
+#     csv = SimpleUploadedFile("test.csv", )

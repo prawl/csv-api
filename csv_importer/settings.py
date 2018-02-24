@@ -1,4 +1,3 @@
-DATE_INPUT_FORMATS = ['%m/%d/%Y']
 """
 Django settings for csv_importer project.
 

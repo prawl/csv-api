@@ -5,7 +5,7 @@ from django.db import models
 
 
 class ImportFile(models.Model):
-  filename = models.CharField(max_length=255)
+  docfile = models.CharField(max_length=255)
   upload = models.FileField(upload_to="uploads/")
 
   def __str__(self):

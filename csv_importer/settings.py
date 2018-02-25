@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django_extensions', # Load all of the existing DB objects in shell
     'compress_storage', # Compress uploaded files
     'rest_framework', # API
+    'ipdb', # Better debuggin
 ]
 
 MIDDLEWARE = [

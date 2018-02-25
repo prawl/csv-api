@@ -2,16 +2,18 @@
 from .forms import DocumentForm
 from .models import ImportFile
 from .models import ImportRow
-from rest_framework.views import APIView
+from .serializers import ImportRowSerialzier
 from datetime import datetime 
+from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
+from django.http import JsonResponse
 from django.shortcuts import render
 from django.template import RequestContext
-from django.http import JsonResponse
-from .serializers import ImportRowSerialzier
 from rest_framework.response import Response
+from rest_framework.views import APIView
 import csv # Import the CSV libaray to making parsing CSV easier https://docs.python.org/3.4/library/csv.html
+import ipdb
 
 class ImportRowIndex(APIView):
     def get(self, request):

@@ -12,10 +12,6 @@ class ImportFile(models.Model):
   def __str__(self):
     return self.filename
 
-  # def save(self, *args, **kwargs)
-    # self.full_clean()
-    # return super(YourModel, self).save(*args, **kwargs)
-
 class ImportRow(models.Model):
   file = models.ForeignKey(ImportFile,null=True, on_delete=models.CASCADE)
   date = models.DateField('Date', null=True, blank=True)
@@ -34,7 +30,3 @@ class ImportRow(models.Model):
   fsi = models.FloatField(default=0,validators=[MinValueValidator(0)])
   digital_coupon = models.FloatField(default=0,validators=[MinValueValidator(0)])
   shopper_marketing = models.FloatField(default=0,validators=[MinValueValidator(0)])
-
-  # def save(self, *args, **kwargs):
-    # self.full_clean()
-    # return super(YourModel, self).save(*args, **kwargs)

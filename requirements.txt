@@ -11,6 +11,7 @@ Pillow==2.9.0
 django-import-export==1.0.0
 psycopg2==2.7.4 # Postgresql adapter for Python
 django-compress-storage==0.9.1 # Compress the files uploaded to the server
+ipdb==0.11 # Allows for halting of code execution for debugging purposes
 pytz==2015.4
 six==1.9.0
 whitenoise==2.0.3

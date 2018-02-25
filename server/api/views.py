@@ -13,7 +13,7 @@ from django.template import RequestContext
 from rest_framework.response import Response
 from rest_framework.views import APIView
 import csv # Import the CSV libaray to making parsing CSV easier https://docs.python.org/3.4/library/csv.html
-import ipdb
+import ipdb # Allow the execution to be halted for better debugging
 
 class ImportRowIndex(APIView):
     def get(self, request):

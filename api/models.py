@@ -7,7 +7,7 @@ from django.db import models
 
 class ImportFile(models.Model):
   docfile = ZipFileField(upload_to="uploads/")
-  filename = models.CharField(max_length=255,null=True)
+  filename = models.CharField(max_length=255,blank=True)
 
   def __str__(self):
     return self.filename

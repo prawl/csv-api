@@ -39,7 +39,6 @@
     "node": "9.6.1"
   },
   "scripts": {
-    "test": "grunt test",
-    // "postinstall": "cd client && bower install"
+    "test": "grunt test"
   }
 }

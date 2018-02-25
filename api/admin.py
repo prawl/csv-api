@@ -7,8 +7,7 @@ from import_export.admin import ImportExportModelAdmin
 from import_export import resources, fields, widgets
 from django.conf.locale.es import formats as es_formats
 
-es_formats.DATETIME_FORMAT = "d M Y H:i:s"
-
+# This allows us map the columns in the CSV cells to the database fields on the ImportRow
 class ImportRowResource(resources.ModelResource):
   # TODO: Figure out how to transform date into appropriate format
   # date = fields.Field(attribute="date", column_name="Observation Date")
@@ -28,7 +27,6 @@ class ImportRowResource(resources.ModelResource):
   digital_coupon = fields.Field(attribute="digital_coupon", column_name="Digital Coupon")
   shopper_marketing = fields.Field(attribute="shopper_marketing", column_name="Shopper Marketing")
 
-
   class Meta:
     model = ImportRow
     skip_unchanged = True
@@ -37,7 +35,13 @@ class ImportRowResource(resources.ModelResource):
               'date':  {'format': '%d-%m-%Y'},
               }
 
+# Register the ImportRow Class in the Admin panel for view/editing, etc
 class ImportRowAdmin(ImportExportModelAdmin):
   resource_class = ImportRowResource
+  
+# Register the ImportFile Class in the Admin panel for view/editing, etc
+class ImportFileAdmin(ImportExportModelAdmin):
+  model = ImportFile
 
 admin.site.register(ImportRow, ImportRowAdmin) 
+admin.site.register(ImportFile) 

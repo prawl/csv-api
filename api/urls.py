@@ -10,8 +10,8 @@ row_resource = ImportRowResource()
 
 urlpatterns = [
     url(r'^list/$', list, name='list'),
-    # url(r'^admin/', admin.site.urls),
-    # url(r'^api/', include(row_resource.urls)),
+    url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(row_resource.urls)),
 ]
 
 # # When in development env use the local MEDIA_ROOT directory to save files

@@ -26,8 +26,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'api',
-    'import_export',
-    'django_extensions',
+    'import_export', # Admin Panel Import/Export for testing purposes
+    'django_extensions', # Load all of the existing DB objects in shell
+    'compress_storage', # Compress uploaded files
 ]
 
 MIDDLEWARE = [
@@ -119,10 +120,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 
 # TODOs:
 # API
-# - Allow a user to upload the CSV from a form via the API
-# - Compress the CSV
-# - Remove the id's from the CSV
-# - Associate a File Object with Import Row
+# - Validate the data to only allow numberic non-negative values
 # - Write some test
 
 # FE

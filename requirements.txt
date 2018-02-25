@@ -8,6 +8,7 @@ gunicorn==19.3
 Markdown==2.6.2
 newrelic==2.54.0.41
 Pillow==2.9.0
+django-import-export==1.0.0
 psycopg2==2.7.4 # Postgresql adapter for Python
 pytz==2015.4
 six==1.9.0

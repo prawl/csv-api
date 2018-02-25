@@ -118,12 +118,3 @@ STATIC_ROOT = '/static/'
 
 MEDIA_URL = '/uploads/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
-
-
-# TODOs:
-# API
-# - Validate the data to only allow numberic non-negative values
-# - Validate the header row exists
-# - Write some test
-
-# FE

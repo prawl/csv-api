@@ -39,6 +39,7 @@
     "node": "0.12.x"
   },
   "scripts": {
-    "test": "grunt test"
+    "test": "grunt test",
+    "postinstall": "cd client && npm install"
   }
 }

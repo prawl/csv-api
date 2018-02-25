@@ -40,6 +40,6 @@
   },
   "scripts": {
     "test": "grunt test",
-    "postinstall": "cd client && bower install"
+    // "postinstall": "cd client && bower install"
   }
 }

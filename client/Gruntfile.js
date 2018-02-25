@@ -80,7 +80,7 @@ module.exports = function (grunt) {
             return [
               modRewrite(['^[^\\.]*$ /index.html [L]']),
               serveStatic('.tmp'),
-              connect().use('/bower_components', serveStatic('./bower_components')),
+              connect().use('/bower_components', serveStatic('./app/static/bower_components')),
               serveStatic(appConfig.app)
             ];
           }

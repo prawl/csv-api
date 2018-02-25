@@ -2,12 +2,22 @@
 from .forms import DocumentForm
 from .models import ImportFile
 from .models import ImportRow
+from rest_framework.views import APIView
 from datetime import datetime 
 from django.core.urlresolvers import reverse
 from django.http import HttpResponseRedirect
 from django.shortcuts import render
 from django.template import RequestContext
+from django.http import JsonResponse
+from .serializers import ImportRowSerialzier
+from rest_framework.response import Response
 import csv # Import the CSV libaray to making parsing CSV easier https://docs.python.org/3.4/library/csv.html
+
+class ImportRowIndex(APIView):
+    def get(self, request):
+        import_rows = ImportRow.objects.all()
+        serializer = ImportRowSerialzier(import_rows, many=True)
+        return Response(serializer.data)
 
 def list(request):
     # Load documents for the list page
@@ -19,7 +29,7 @@ def list(request):
         if form.is_valid():
             uploaded_file = request.FILES['docfile']
             newdoc = ImportFile(docfile=uploaded_file,filename=uploaded_file.name)
-            newdoc.save()
+            newdoc.save # validate here
             newdoc.docfile.compress() # After saving the file compress it
 
             # Read the contents of the uploaded file

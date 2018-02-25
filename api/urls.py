@@ -1,19 +1,14 @@
 # -*- coding: utf-8 -*-
 from . import views
-from api.resources import ImportRowResource
+from api.views import list
 from django.conf.urls import include
 from django.conf.urls import url
 from django.contrib import admin
-from api.views import list
-
-row_resource = ImportRowResource()
+from rest_framework.urlpatterns import format_suffix_patterns
 
 urlpatterns = [
+    # TODO: Update this name to api/file/create
     url(r'^list/$', list, name='list'),
     url(r'^admin/', admin.site.urls),
-    url(r'^api/', include(row_resource.urls)),
+    url(r'^api/rows', views.ImportRowIndex.as_view()),
 ]
-
-# # When in development env use the local MEDIA_ROOT directory to save files
-# if settings.DEBUG:
-#     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

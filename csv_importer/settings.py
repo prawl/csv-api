@@ -29,6 +29,7 @@ INSTALLED_APPS = [
     'import_export', # Admin Panel Import/Export for testing purposes
     'django_extensions', # Load all of the existing DB objects in shell
     'compress_storage', # Compress uploaded files
+    'rest_framework', # API
 ]
 
 MIDDLEWARE = [
@@ -121,6 +122,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'uploads')
 # TODOs:
 # API
 # - Validate the data to only allow numberic non-negative values
+# - Validate the header row exists
 # - Write some test
 
 # FE

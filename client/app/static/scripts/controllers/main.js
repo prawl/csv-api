@@ -1,7 +1,5 @@
 'use strict';
 
-angular.module('clientApp', ['restangular']);
-
 angular.module('clientApp')
   .controller('MainCtrl', function ($scope) {
     $scope.todos = [

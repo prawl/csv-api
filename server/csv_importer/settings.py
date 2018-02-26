@@ -13,7 +13,7 @@ SECRET_KEY = ')o8ktz9=ac$2-l079$r=-8rgq4uq@ste1+z&8b4vh*y5bqzz&l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['csv-importer-be.ngrok.io.ngrok.io', 'csv-importer-fe.ngrok.io.ngrok.io', 'localhost:8000']
+ALLOWED_HOSTS = ['csv-importer-be.ngrok.io.ngrok.io', 'csv-importer-fe.ngrok.io.ngrok.io', 'localhost']
 
 
 # Application definition
@@ -44,10 +44,17 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+CORS_ORIGIN_ALLOW_ALL=True
 
-CORS_ORIGIN_WHITELIST = (
-    "localhost:9000", # Allow the FE app to access the API
-)
+# CORS_ORIGIN_WHITELIST = (
+#     "localhost:9000", # Allow the FE app to access the API
+#     "localhost:8000", # Allow the FE app to access the API
+#     "http://localhost:8000/api/rows", # Allow the FE app to access the API
+#     "http://localhost:9000/api/rows", # Allow the FE app to access the API
+#     "http://csv-importer-fe.ngrok.io.ngrok.io",
+#     "csv-importer-be.ngrok.io.ngrok.io/",
+#     "csv-importer-fe.ngrok.io.ngrok.io/",
+# )
 
 ROOT_URLCONF = 'api.urls'
 

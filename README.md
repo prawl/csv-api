@@ -1,5 +1,8 @@
 App Url: http://csv-importer-fe.ngrok.io.ngrok.io/
-Admin Panel: http://csv-importer-be.ngrok.io.ngrok.io/admin/login/?next=/admin/
+
+API Url: http://csv-importer-be.ngrok.io.ngrok.io/api/rows
+
+Admin Panel URL: http://csv-importer-be.ngrok.io.ngrok.io/admin/login/?next=/admin/
   - Admin Panel Credentials
   - Username: prawl
   - Password: securepassword

@@ -7,9 +7,6 @@ angular.module('clientApp')
     $scope.import_rows = Restangular.all('rows').getList().$object;
 
     $scope.uploadFile = function (files) {
-      if(files === undefined) {
-        console.log("NO FILE FOUND!");
-      } 
       var fd = new FormData();
       fd.append("file", files[0]);
       $http.post('http://localhost:8000/api/files/upload', fd, {

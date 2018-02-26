@@ -5,13 +5,13 @@
         <h3 class="masthead-brand">Keen CSV Importer </h3>
         <ul class="nav masthead-nav">
           <li class="active"><a href="#">Home</a></li>
-          <li><a href="/api/" target="_self">API</a></li>
-          <li><a href="/admin/" target="_self">Admin</a></li>
+          <li><a href="http://localhost:8000/api/rows">API</a></li>
+          <li><a href="http://localhost:8000">Admin</a></li>
         </ul>
       </div>
     </div>
     <div class="instruction" ng-if="import_rows.length === 0">
-      <p> Nothing has been imported yet.  Let's get started by uploading a file.</p>
+      <p> Nothing has been imported yet. Let's get started by uploading a file.</p>
     </div>
     <div class="nav masthead-nav upload" style="float: none;">
       <input type="file" accept=".csv" name="docfile" onchange="angular.element(this).scope().uploadFile(this.files)"/>

@@ -1,10 +1,7 @@
 'use strict';
 
 angular.module('clientApp')
-  .controller('MainCtrl', function ($scope) {
-    $scope.todos = [
-      'Create Django models',
-      'Expose them through a REST API',
-      'Consume them with restangular'
-    ];
+  .controller('MainCtrl', function ($scope, Restangular) {
+    Restangular.setBaseUrl('http://localhost:8000/api/');
+    $scope.import_rows = Restangular.all('rows').getList().$object;
   });

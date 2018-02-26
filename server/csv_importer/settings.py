@@ -31,17 +31,23 @@ INSTALLED_APPS = [
     'compress_storage', # Compress uploaded files
     'rest_framework', # API
     'ipdb', # Better debuggin
+    'corsheaders' # Allow cross-origin resource sharing for dev env
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware', # Allow the CORS to pass through
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+CORS_ORIGIN_WHITELIST = (
+    "localhost:9000", # Allow the FE app to access the API
+)
 
 ROOT_URLCONF = 'api.urls'
 

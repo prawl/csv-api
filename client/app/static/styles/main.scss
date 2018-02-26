@@ -133,6 +133,15 @@ body {
   color: rgba(255,255,255,.5);
 }
 
+.errors {
+  color: red;
+  float: left
+}
+
+.upload-file {
+  float: left;
+}
+
 /*
  * Affix and center
  */

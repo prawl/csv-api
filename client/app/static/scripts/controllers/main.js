@@ -13,6 +13,10 @@ angular.module('clientApp')
           withCredentials: false,
           headers: {'Content-Type': undefined },
           transformRequest: angular.identity
-      }).success( $window.location.reload() );
+      }).then(function successCallback(reponse) {
+         $window.location.reload()
+      }, function errorCallback(response) {
+        $scope.errors = response.data.message
+      });
     };
   });

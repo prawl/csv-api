@@ -6,14 +6,14 @@ from .serializers import ImportRowSerialzier
 from datetime import datetime 
 from django.core.exceptions import ValidationError
 from django.core.urlresolvers import reverse
-from django.http import HttpResponseRedirect
-from django.http import JsonResponse
+from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render
 from django.template import RequestContext
 from rest_framework.response import Response
 from rest_framework.views import APIView
 import csv # Import the CSV libaray to making parsing CSV easier https://docs.python.org/3.4/library/csv.html
 import ipdb # Allow the execution to be halted for better debugging
+import json
 
 class ImportRowIndex(APIView):
     def get(self, request):
@@ -24,6 +24,12 @@ class ImportRowIndex(APIView):
 class ImportFileUpload(APIView):
     def post(self, request):
         uploaded_file = request.FILES['file']
+        sniffer = csv.Sniffer()
+        if not sniffer.has_header(uploaded_file.read(2048)):
+           response = HttpResponse(json.dumps({'message': "The file is missing header data. Please ensure it's in the proper format and try again."}), content_type="application/json") 
+           response.status_code = 400
+           return response
+
         newdoc = ImportFile(docfile=uploaded_file,filename=uploaded_file.name)
         newdoc.save() # validate here
         newdoc.docfile.compress() # After saving the file compress it

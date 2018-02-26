@@ -6,7 +6,7 @@
 - [X] Create Serializers
 - [X] Write tests
 - [] Validate the data to only allow numberic non-negative values
-- [] Validate the header row exists
+- [X] Validate the header row exists
 - [] Refactor tests
 - [] Update DB with postgres instead of mysql
 # FE

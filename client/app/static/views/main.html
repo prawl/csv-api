@@ -10,10 +10,14 @@
         </ul>
       </div>
     </div>
-    <p ng-if="import_rows.length === 0"> Nothing has been imported yet.</p>
-
-    <div ng-if="import_rows > 0">
-      <div class="inner cover">
+    <div class="instruction" ng-if="import_rows.length === 0">
+      <p> Nothing has been imported yet.  Let's get started by uploading a file.</p>
+    </div>
+    <div class="nav masthead-nav upload" style="float: none;">
+      <input type="file" accept=".csv" name="docfile" onchange="angular.element(this).scope().uploadFile(this.files)"/>
+    </div>
+    <div ng-if="import_rows.length > 0">
+      <div class="inner cover spacing">
         <table >
           <tr>
             <th>Id</th>
@@ -21,7 +25,6 @@
             <th>Retail Sales Volume</th>
             <th>Retail Price</th>
             <th>ACV Distribution</th>
-
             <th>Competiton</th>
             <th>EDLP</th>
             <th>Trade Any Promo</th>

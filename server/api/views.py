@@ -23,7 +23,7 @@ class ImportRowIndex(APIView):
 
 class ImportFileUpload(APIView):
     def post(self, request):
-        uploaded_file = request.FILES['docfile']
+        uploaded_file = request.FILES['file']
         newdoc = ImportFile(docfile=uploaded_file,filename=uploaded_file.name)
         newdoc.save() # validate here
         newdoc.docfile.compress() # After saving the file compress it

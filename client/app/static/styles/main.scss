@@ -140,7 +140,7 @@ body {
 @media (min-width: 768px) {
   /* Pull out the header and footer */
   .masthead {
-    position: fixed;
+    position: initial;
     top: 0;
   }
   .mastfoot {
@@ -149,7 +149,7 @@ body {
   }
   /* Start the vertical centering */
   .site-wrapper-inner {
-    vertical-align: middle;
+    vertical-align: top;
   }
   /* Handle the widths */
   .masthead,
@@ -168,10 +168,22 @@ td, th {
   padding: 1rem;
 }
 
+.instruction {
+  float: left;
+  padding-left: 30px;
+  padding-top: 30px;
+}
+
+.upload {
+  padding-top: 5%;
+  padding-bottom: 10px;
+  padding-left: 30px;
+}
+
 @media (min-width: 992px) {
   .masthead,
   .mastfoot,
   .cover-container {
-    width: 700px;
+    width: 100%;
   }
 }

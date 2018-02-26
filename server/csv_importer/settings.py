@@ -13,7 +13,7 @@ SECRET_KEY = ')o8ktz9=ac$2-l079$r=-8rgq4uq@ste1+z&8b4vh*y5bqzz&l'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['csv-importer-be.ngrok.io.ngrok.io', 'csv-importer-fe.ngrok.io.ngrok.io', 'localhost:8000']
 
 
 # Application definition

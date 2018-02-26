@@ -1,1 +1,1 @@
-web: python server/manage.py runserver ${PORT}
+web: gunicorn ./server/csv_importer/wsgi.py --log-file -

@@ -1,1 +1,1 @@
-web: gunicorn ./server/csv_importer/wsgi.py:application --log-file -
+web: gunicorn './server/csv_importer/wsgi:application' --log-file -

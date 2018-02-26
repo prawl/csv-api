@@ -7,6 +7,13 @@ Admin Panel URL: http://csv-importer-be.ngrok.io.ngrok.io/admin/login/?next=/adm
   - Username: prawl
   - Password: securepassword
 
+## How to Use
+- Importing rows demo
+![Import](https://media.giphy.com/media/i3XE5hJTYT1YwHdg5G/giphy.gif)
+
+- Deleting imported rows
+![Delete](https://media.giphy.com/media/3JX8cGbQtXjPQl5Sw8/giphy.gif)
+
 # TODOs:
 
 # API
